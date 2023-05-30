@@ -88,7 +88,7 @@ def get_eval(ques, ans1, ans2):
         contents.append(content)
     
     if args.bpc == 1:
-        system_prompt, user_prompt_bpc = gen_prompt(ques, ans1, ans2)
+        system_prompt, user_prompt_bpc = gen_prompt(ques, ans2, ans1)
         response_bpc = query_gpt(system_prompt, user_prompt_bpc)
         cost += response_bpc['usage']['prompt_tokens'] * cost_per_promtp_token
         cost += response_bpc['usage']['completion_tokens'] * cost_per_completion_token
